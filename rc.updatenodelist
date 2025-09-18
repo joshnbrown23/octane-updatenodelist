@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 TOPDOMAIN=register.octanenetwork.net
 SUBDOMAINS="nodes1 nodes2 nodes3 nodes4"
