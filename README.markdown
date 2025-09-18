@@ -28,11 +28,6 @@ Without this information you will NOT be able to connect to any of the existing 
    This downloads `rc.updatenodelist`, backs up the existing file, and installs the new version. Then Creates the required register line in your iax.conf file. It does backup your old file just in case.
   ```
 
-5. **Verify the Update**:
-   ```bash
-   cat /tmp/rpt_extnodes
-   ```
-
 ## Notes
 - Ensure `wget` is installed (`yum install wget` or `apt-get install wget`).
 - The script assumes `rc.updatenodelist` is in `/usr/local/etc/`. Adjust `DEST_PATH` in `update_rc.sh` if needed.
