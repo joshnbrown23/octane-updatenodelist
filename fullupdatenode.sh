@@ -136,22 +136,18 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-# Set permissions for iax.conf
-echo "Setting permissions on $IAX_CONF"
-$CHMOD 644 "$IAX_CONF"
-if [ $? -ne 0 ]; then
-    echo "Error: Failed to set permissions for $IAX_CONF at $($DATE)" >> /var/log/update_rc.log
-    exit 1
-fi
-# Set ownership to asterisk user (common for HamVoIP/Asterisk)
-chown asterisk:asterisk "$IAX_CONF" 2>/dev/null || echo "Warning: Failed to set ownership of $IAX_CONF (may not be needed) at $($DATE)" >> /var/log/update_rc.log
-
 # Restart Asterisk to apply iax.conf changes (if applicable)
 if [ -x "$(which asterisk)" ]; then
     echo "Restarting Asterisk to apply changes"
     asterisk -rx "module reload iax2" >/dev/null 2>&1
     if [ $? -ne 0 ]; then
         echo "Warning: Failed to reload IAX2 module, consider restarting Asterisk manually at $($DATE)" >> /var/log/update_rc.log
+    fi
+
+# Restart node to apply changes
+    echo "REBOOTING NODE TO APPLY CHANGES"
+    sleep 10
+    sudo reboot
     fi
 fi
 
