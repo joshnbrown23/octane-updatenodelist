@@ -118,6 +118,12 @@ else
     exit 1
 fi
 
+# Check if [radio-proxy] exists in iax.conf
+if ! grep -q "\[radio-proxy\]" "$IAX_CONF"; then
+    echo "Error: [radio-proxy] section not found in $IAX_CONF at $($DATE)" >> /var/log/update_rc.log
+    exit 1
+fi
+
 # Check if register line already exists to avoid duplicates
 if grep -q "register.*=>.*@register.octanenetwork.net" "$IAX_CONF"; then
     echo "Warning: A register line for register.octanenetwork.net already exists in $IAX_CONF. Replacing it."
@@ -128,21 +134,13 @@ if grep -q "register.*=>.*@register.octanenetwork.net" "$IAX_CONF"; then
     fi
 fi
 
-# Insert the register line at line 24
-echo "Adding register line to $IAX_CONF at line 24"
-$SED -i "24i register => $NODE:$PASSWORD@register.octanenetwork.net" "$IAX_CONF"
+# Insert the register line before [radio-proxy]
+echo "Adding register line to $IAX_CONF before [radio-proxy]"
+$SED -i "/\[radio-proxy\]/i register => $NODE:$PASSWORD@register.octanenetwork.net" "$IAX_CONF"
 if [ $? -ne 0 ]; then
     echo "Error: Failed to add register line to $IAX_CONF at $($DATE)" >> /var/log/update_rc.log
     exit 1
 fi
-
-# Restart Asterisk to apply iax.conf changes (if applicable)
-if [ -x "$(which asterisk)" ]; then
-    echo "Restarting Asterisk to apply changes"
-    asterisk -rx "module reload iax2" >/dev/null 2>&1
-    if [ $? -ne 0 ]; then
-        echo "Warning: Failed to reload IAX2 module, consider restarting Asterisk manually at $($DATE)" >> /var/log/update_rc.log
-    fi
 
 # Restart node to apply changes
     echo "REBOOTING NODE TO APPLY CHANGES"
