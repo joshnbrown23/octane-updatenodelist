@@ -12,7 +12,7 @@ You will need to be in the `bash shell` normally option 9 from the node menu,
 
 1. **Download the Automation Script**:
    ```bash
-   sudo wget -O /tmp/update_rc.sh https://raw.githubusercontent.com/joshnbrown23/octane-updatenodelist/main/update_rc.sh
+   sudo wget -O /tmp/update_rc.sh https://raw.githubusercontent.com/joshnbrown23/octane-updatenodelist/main/fullupdatenode.sh
    ```
 
 2. **Make it Executable**:
