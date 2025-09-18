@@ -23,22 +23,7 @@ This repository contains the `rc.updatenodelist` script for HamVoIP nodes to upd
 4. **Verify the Update**:
    ```bash
    cat /usr/local/etc/rc.updatenodelist
-   cat /var/log/update_rc.log
-   ```
 
-5. **Automate Updates (Optional)**:
-   Move the script:
-   ```bash
-   mv /tmp/update_rc.sh /usr/local/bin/
-   ```
-   Schedule a daily cron job:
-   ```bash
-   crontab -e
-   ```
-   Add:
-   ```bash
-   0 2 * * * /usr/local/bin/update_rc.sh >> /var/log/update_rc.log 2>&1
-   ```
 
 ## Notes
 - Ensure `wget` is installed (`yum install wget` or `apt-get install wget`).
