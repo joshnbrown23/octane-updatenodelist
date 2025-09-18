@@ -1,6 +1,6 @@
 # Octane Update Node List
 
-This repository contains the `rc.updatenodelist` script for HamVoIP nodes to update the node list from `register.octanenetwork.net`.
+This repository contains the `rc.updatenodelist` script for OCTANE NETWORK GMRS nodes to update the node list from `register.octanenetwork.net`.
 
 ## Installation
 
