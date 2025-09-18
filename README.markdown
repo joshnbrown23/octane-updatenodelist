@@ -1,13 +1,14 @@
 # Octane Update Node List
 
-This repository contains the `rc.updatenodelist` script for OCTANE NETWORK GMRS nodes to update the node list from `register.octanenetwork.net`,
+This repository contains the new `rc.updatenodelist` script for OCTANE NETWORK GMRS nodes.
 
-** Also contains the required info to add into your `iax.conf` file to be able to successfully register to the new Octane Registration Server.
+** It also adds the required info to your `iax.conf` file to be able to successfully register to the new Octane Registration Server.
+
+**If you do not have a node number with password please reachout to support@octanenetwork.net to get registered on the new server.**
 
 Without this information you will NOT be able to connect to any of the existing hubs.
 
-You will need to be in the `bash shell` normally option 9 from the node menu,
-
+**You will need to be in the `bash shell` normally option 9 from the node menu**
 ## Installation
 
 1. **Download the Automation Script**:
