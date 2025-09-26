@@ -10,7 +10,7 @@ Without this information you will NOT be able to connect to any of the existing 
 
 **You will need to be in the `bash shell` normally option 9 from the node menu**
 
-## RUN AT ONCE - TEST
+## Run at once script - click the copy button and then paste this into the bash shell - you should be prompted with a Blue screen asking for your node number.
 
    ``` bash
    sudo wget -O /tmp/update_rc.sh https://raw.githubusercontent.com/joshnbrown23/octane-updatenodelist/main/fullupdatenode.sh
