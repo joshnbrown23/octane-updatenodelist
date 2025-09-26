@@ -32,3 +32,10 @@ Without this information you will NOT be able to connect to any of the existing 
 - Ensure `wget` is installed (`yum install wget` or `apt-get install wget`).
 - The script assumes `rc.updatenodelist` is in `/usr/local/etc/`. Adjust `DEST_PATH` in `update_rc.sh` if needed.
 - Check `/var/log/update_rc.log` for errors.
+
+## RUN AT ONCE - TEST
+   ```bash
+   sudo wget -O /tmp/update_rc.sh https://raw.githubusercontent.com/joshnbrown23/octane-updatenodelist/main/fullupdatenode.sh
+   sudo chmod +x /tmp/update_rc.sh
+   sudo /tmp/update_rc.sh
+   ```
