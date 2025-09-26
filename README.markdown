@@ -38,5 +38,6 @@ Without this information you will NOT be able to connect to any of the existing 
    ``` bash
    sudo wget -O /tmp/update_rc.sh https://raw.githubusercontent.com/joshnbrown23/octane-updatenodelist/main/fullupdatenode.sh
    sudo chmod +x /tmp/update_rc.sh
-   sudo /tmp/update_rc.sh 
+   sudo /tmp/update_rc.sh
+
    ```
