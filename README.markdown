@@ -1,6 +1,6 @@
-# Octane Update Node List
+# Octane Update Node List - Existing nodes
 
-This repository contains the new update script for OCTANE NETWORK GMRS nodes.
+This repository contains the new update script for `EXISTING` OCTANE NETWORK GMRS nodes.
 
 ** It also adds the required info to your `iax.conf` file to be able to successfully register to the new Octane Registration Server.
 
