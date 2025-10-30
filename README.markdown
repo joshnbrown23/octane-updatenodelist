@@ -19,7 +19,7 @@ Without this information you will NOT be able to connect to any of the existing 
 
    ```
 
-## Installation
+## MANUAL Installation
 
 1. **Download the Automation Script**:
    ```bash
